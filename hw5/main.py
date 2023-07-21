@@ -1,4 +1,4 @@
-from game_logic import GameLogic
+from geek.hw5.game_logic import GameLogic
 
 if __name__ == '__main__':
     game_logic = GameLogic()

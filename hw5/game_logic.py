@@ -1,6 +1,5 @@
-import random
 from decouple import config
-from casino import Casino
+from geek.hw5.casino import Casino
 
 class GameLogic:
     def __init__(self):

@@ -1,6 +1,7 @@
 import random
 
 class Casino:
+
     def __init__(self, slot_numbers):
         self.slot_numbers = slot_numbers
 
