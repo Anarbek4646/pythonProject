@@ -12,12 +12,14 @@ def bubble_sort(arr):
                 swapped = True
 
 
+
         if not swapped:
             break
+    return arr
 
 
 my_list = [64, 34, 25, 12, 22, 11, 90]
 print("Исходный список:", my_list)
 
-bubble_sort(my_list)
-print("Отсортированный список:", my_list)
+sorted_list = bubble_sort(my_list)
+print("Отсортированный список:", sorted_list)
