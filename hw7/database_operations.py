@@ -78,10 +78,10 @@ def select_all_products(conn):
 
 def select_products_by_price_limit(conn, limit):
     sql = '''SELECT * FROM products
-    WHERE price < ?'''
+    WHERE price < ? and quantity > ? '''
     try:
         cursor = conn.cursor()
-        cursor.execute(sql, (limit,))
+        cursor.execute(sql, limit)
 
         rows = cursor.fetchall()
         for row in rows:
@@ -154,13 +154,13 @@ if connection_to_db is not None:
 
     # update_quantity(connection_to_db, (50, 2))
     # update_price(connection_to_db, (5.54, 2))
-    delete_product_by_id(connection_to_db, 3)
+    # delete_product_by_id(connection_to_db, 3)
     print('\nВсе товары из таблицы Product\n')
 
     select_all_products(connection_to_db)
-    print('Все товары из таблицы Product цена котрых меньше 100\n')
+    print('Все товары из таблицы Product цена котрых меньше 100 и кол-во больше 5\n')
 
-    select_products_by_price_limit(connection_to_db, 100)
+    select_products_by_price_limit(connection_to_db, (100, 5))
 
     print('товары с названием “мыло” \n')
     search_products_by_title(connection_to_db, 'мыло')
